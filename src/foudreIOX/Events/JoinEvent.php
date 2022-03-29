@@ -21,16 +21,16 @@ class JoinEvent implements Listener
 
 
         if ($event->getPlayer()->hasPlayedBefore()) {
-            Server::getInstance()->broadcastMessage("§f[§eJoinMessage§f] §a[+] §f {$event->getPlayer()->getName()} ");
+            Server::getInstance()->broadcastMessage("§f[§eElectronium§f] §a[+] §f {$event->getPlayer()->getName()} ");
         } else {
             $event->getPlayer()->getInventory()->addItem(ItemFactory::getInstance()->get(ItemIds::WOOD, 0, 64)->setCustomName("§fKIT base"));
-            Server::getInstance()->broadcastMessage("Welcome to the player §C {$event->getPlayer()->getName()} §f who is new to the server");
+            Server::getInstance()->broadcastMessage("Bienvenue au joueur §C {$event->getPlayer()->getName()} §f qui est nouveau sur le serveur !");
         }
     }
 
     public function onQuit(PlayerQuitEvent $event)
     {
         $event->setQuitMessage("");
-        Server::getInstance()->broadcastMessage("§f[§eQuitMessage§f] §4[-] §f {$event->getPlayer()->getName()}");
+        Server::getInstance()->broadcastMessage("§f[§eElectronium§f] §4[-] §f {$event->getPlayer()->getName()}");
     }
 }
